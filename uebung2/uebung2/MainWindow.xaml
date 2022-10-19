@@ -1,0 +1,16 @@
+﻿<Window x:Class="uebung2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:uebung2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <WrapPanel>
+        <TextBox TextWrapping="Wrap" Text="{Binding ElementName=text4, Mode=OneWay, NotifyOnSourceUpdated=True, Path=Text}"  Name="text1" />
+        <TextBox TextWrapping="Wrap"   Text="{Binding ElementName=text1, Mode=OneWay, NotifyOnSourceUpdated=True, Path=Text}" Name="text2"/>
+        <TextBox TextWrapping="Wrap" Text="{Binding ElementName=text2, Mode=OneWay, NotifyOnSourceUpdated=True, Path=Text}"  Name="text3"/>
+        <TextBox TextWrapping="Wrap" Text="{Binding ElementName=text3, Mode=OneWay, NotifyOnSourceUpdated=True, Path=Text}"  Name="text4"/>
+
+    </WrapPanel>
+</Window>
