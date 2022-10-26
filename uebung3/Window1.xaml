@@ -1,0 +1,21 @@
+﻿<Window x:Class="uebung3.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:uebung3"
+        mc:Ignorable="d"
+        Title="Window1" Height="450" Width="800"
+        DataContext="{Binding RelativeSource={x:Static RelativeSource.Self}}">
+    <StackPanel>
+        <Label Name="A">1234</Label>
+
+        <Label Name="B" Content="{Binding ElementName=A, Path=Content}"/>
+
+        <Label Name="C" DataContext="{Binding Path=MyObject}" Content="{Binding Path=MyField}"/>
+
+        <Label Name="D" Content="{Binding Path=myfield}" />
+
+        <Button Click="Change">Change</Button>
+    </StackPanel>
+</Window>

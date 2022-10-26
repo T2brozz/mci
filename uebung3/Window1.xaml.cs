@@ -16,22 +16,10 @@ using System.Windows.Shapes;
 namespace uebung3
 {
     /// <summary>
-    /// Code behind of MainWindow.xaml
-    /// 
-    /// The code of this particular project is intentionally left incomplete
-	/// (code-behind as well as XAML). Missing pieces of code are indicated by
-	/// markers such as ___1___.
-	///
-    /// As an exercise, the missing pieces of code should be identified and
-	/// inserted. Do not add additional code. The full program should use data
-	/// bindings in order to display 9876543 in each Label once the button
-    /// Change is clicked.
+    /// Interaction logic for Window1.xaml
     /// </summary>
-    /// 
-    
-    public partial class MainWindow : Window
+    public partial class Window1 : Window
     {
-        // Create an instance of class student
         protected MyClass myObject = new MyClass();
         public MyClass MyObject
         {
@@ -39,16 +27,16 @@ namespace uebung3
             set { myObject = value; }
         }
 
-        public MainWindow()
+        public Window1()
         {
-            
+
             InitializeComponent();
 
-            Binding myBinding = new Binding();
-            myBinding.Source = ___2___;
-            A.SetBinding(___3___, myBinding);
+            Binding myBinding = new Binding(nameof(MyObject.MyField));
+            myBinding.Source = myObject;
+            A.SetBinding(Label.ContentProperty, myBinding);
 
-            D.DataContext = ___4___;
+            D.DataContext = myObject;
         }
 
         private void Change(object sender, RoutedEventArgs e)
@@ -56,7 +44,7 @@ namespace uebung3
             myObject.MyField = 9876543;
         }
 
- 
+
     }
 
     /// <summary>
@@ -93,7 +81,7 @@ namespace uebung3
             set
             {
                 _MyField = value;
-                OnPropertyChanged(___11___);
+                OnPropertyChanged(nameof(MyField));
             }
             get
             {
@@ -102,3 +90,4 @@ namespace uebung3
         }
     }
 }
+
