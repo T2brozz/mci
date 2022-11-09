@@ -1,0 +1,11 @@
+﻿<Window x:Name="MainWindowInstance" x:Class="FittsExercise.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="FittsExercise" Height="650" Width="650" 
+        MouseLeftButtonDown="WindowClicked" 
+        ResizeMode="NoResize" WindowStyle="None" BorderThickness="3" Topmost="False" WindowStartupLocation="CenterScreen">
+    <Canvas Name="Canvas">
+        <Button x:Name="bnStart" Content="Start" Width="75" Click="OnStartClicked" Margin="284,311,285,311"/>
+        <Ellipse x:Name="Target" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="100" Stroke="Black" VerticalAlignment="Top" Width="100" MouseLeftButtonDown="OnTargetClicked"/>
+    </Canvas>
+</Window>

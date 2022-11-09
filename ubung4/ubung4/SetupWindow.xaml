@@ -1,0 +1,33 @@
+﻿<Window x:Class="FittsExercise.SetupWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Setup" SizeToContent="WidthAndHeight"
+        DataContext="{Binding RelativeSource={x:Static RelativeSource.Self}}">
+    <Grid Margin="5">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Padding="0">Id (arbitrary)</Label>
+        <TextBox Grid.Row="0" Grid.Column="2" HorizontalAlignment="Stretch" Text="{Binding Path=ExperimentId, UpdateSourceTrigger=PropertyChanged}" Background="WhiteSmoke" />
+
+        <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Padding="0">Number of tasks</Label>
+        <TextBox Grid.Row="1" Grid.Column="2" HorizontalAlignment="Stretch" Text="{Binding Path=NbrOfTasks, UpdateSourceTrigger=PropertyChanged}" Background="WhiteSmoke" />
+
+        <CheckBox Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" IsChecked="{Binding Path=ResetMousePos}" Content="Reset mouse position" />
+
+        <CheckBox Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" IsChecked="{Binding Path=Precuing}" Content="Precuing" />
+
+        <Button Grid.Row="4" Grid.Column="0" HorizontalAlignment="Stretch" Content="Cancel" Click="Cancel_Click" />
+        <Button Grid.Row="4" Grid.Column="2" HorizontalAlignment="Stretch" Content="Okay" Click="Okay_Click" />
+    </Grid>
+</Window>
